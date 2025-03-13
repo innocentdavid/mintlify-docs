@@ -1,102 +1,172 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Heyform helper center",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#116AF2",
+    "light": "#116AF2",
+    "dark": "#116AF2"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.ico",
+  "icons": { "library": "fontawesome" },
+  "appearance": { "default": "dark", "strict": false },
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Star on GitHub",
+          "href": "https://go.heyform.net/github",
+          "icon": "star"
+        },
+        {
+          "anchor": "Create Issues",
+          "href": "https://go.heyform.net/issue",
+          "icon": "circle-dot"
+        },
+        {
+          "anchor": "Chat on Discord",
+          "href": "https://go.heyform.net/discord",
+          "icon": "discord"
+        },
+        {
+          "anchor": "Become a Sponsor",
+          "href": "https://go.heyform.net/sponsor",
+          "icon": "hand-holding-medical"
+        }
+      ]
+    },
     "tabs": [
       {
         "tab": "Guides",
         "groups": [
           {
-            "group": "Get Started",
+            "root": "sdk",
+            "group": "Get started",
             "pages": [
               "introduction",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Essentials",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              {
+                "group": "Quickstart",
+                "icon": "location-arrow",
+                "pages": [
+                  "quickstart/create-a-form",
+                  "quickstart/rename-a-form",
+                  "quickstart/delete-a-form"
+                ]
+              },
+              {
+                "group": "Features",
+                "icon": "list",
+                "pages": [
+                  "features/analytics",
+                  "features/submissions",
+                  "features/share",
+                  "features/collaboration",
+                  "features/custom-domain",
+                  "features/custom-css",
+                  "features/form-settings",
+                  "features/embed-your-form",
+                  "features/conditional-logic",
+                  "features/hidden-fields"
+                ]
+              },
+              {
+                "group": "Integrations",
+                "icon": "plug-circle-bolt",
+                "pages": [
+                  "integrations/airtable",
+                  "integrations/email",
+                  "integrations/facebook-pixel",
+                  "integrations/google-analytics",
+                  "integrations/google-drive",
+                  "integrations/google-sheets",
+                  "integrations/hubspot",
+                  "integrations/lark-suite",
+                  "integrations/mailchimp",
+                  "integrations/notion",
+                  "integrations/slack",
+                  "integrations/telegram",
+                  "integrations/webhook",
+                  "integrations/zapier"
+                ]
+              },
+              {
+                "group": "Open Source",
+                "icon": "book-open",
+                "pages": [
+                  {
+                    "group": "Configuration",
+                    "icon": "gear",
+                    "pages": [
+                      "open-source/configuration/environment-variables",
+                      "open-source/configuration/authentication",
+                      "open-source/configuration/stripe"
+                    ]
+                  },
+                  "open-source/self-hosting",
+                  "open-source/local-development",
+                  "open-source/contribute",
+                  "open-source/license"
+                ]
+              },
+              {
+                "group": "Legal",
+                "icon": "file-check",
+                "pages": ["legal/tos", "legal/privacy", "legal/report-abuse"]
+              }
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
+    "links": [],
+
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Discord",
+      "href": "https://go.heyform.net/discord"
     }
   },
+  "redirects": [
+    {
+      "source": "/quickstart",
+      "destination": "/quickstart/create-a-form",
+      "permanent": true
+    },
+    {
+      "source": "/features",
+      "destination": "/features/share",
+      "permanent": true
+    },
+    {
+      "source": "/integrations",
+      "destination": "/integrations/airtable",
+      "permanent": true
+    },
+    {
+      "source": "/open-source",
+      "destination": "/open-source/configuration/environment-variables",
+      "permanent": true
+    },
+    {
+      "source": "/open-source/configuration",
+      "destination": "/open-source/configuration/environment-variables",
+      "permanent": true
+    },
+    {
+      "source": "/legal",
+      "destination": "/legal/tos",
+      "permanent": true
+    }
+  ],
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/heyform/docs"
     }
   }
 }

@@ -1,0 +1,122 @@
+---
+title: "Embed Your Form"
+description: "Easily embed a HeyForm on any webpage and seamlessly customize it to match your style. Choose from four different types of embeds:"
+icon: code-simple
+iconType: regular
+---
+
+- **Standard:** Embed the form as part of your webpage.
+- **Modal:** Embed the form as a modal on your webpage.
+- **Popup:** Display the form as a popup in the side corner of your webpage.
+- **Full-page:** Embed the form as a full-page experience.
+
+## How Embedding Works
+---
+
+1. Go to your form's **Share** page.
+2. Select your preferred embed type.
+3. A preview modal will open with embed settings. Configure the settings to fit your desired look.
+4. Click the **Get the code** button, copy the embed code, and paste it into your website.
+
+<img src="/images/embed.gif" alt="How embedding works" data-zoomable preload />
+
+## Standard
+---
+
+<img src="/images/embed-standard.png" alt="Standard" data-zoomable preload />
+
+- **Width:** Adjust the width of the form (in pixels or percentage).
+- **Height:** Adjust the height (in pixels, percentage, or adaptively).
+- **Transparent background:** Remove the default background for seamless integration.
+
+## Modal
+---
+
+<img src="/images/embed-modal.png" alt="Modal" data-zoomable preload />
+
+### Settings
+
+- **Modal size**: set size of the modal which includes three sizes: small, medium, and large.
+- **Launch**: this option lets you choose when your modal form appears on your site.
+  - **On button click:** the form will appear when a visitor clicks a button on your website.
+  - **On page load:** the form will appear immediately when the page opens.
+  - **After elapsed time:** the form will appear after a specified number of seconds.
+  - **On exit intent:** the form will appear when the visitor moves their cursor to the top bar of the browser window (not supported on mobile).
+  - **After scrolling:** the form will appear when the visitor has scrolled a specified % down the page.
+- **Trigger background:** set the background color of the trigger button.
+- **Close on submit**: after a respondent submits the popup form, you can configure the number of seconds before the popup closes automatically.
+- **Transparent background:** enhance the appearance of your form by removing the default background and seamlessly integrating it into your website.
+
+## Popup
+---
+
+<img src="/images/embed-popup.png" alt="Popup" data-zoomable preload />
+
+### Settings
+
+- **Launch**: this option lets you choose when your modal form appears on your site.
+    - **On button click:** the form will appear when a visitor clicks a button on your website.
+    - **On page load:** the form will appear immediately when the page opens.
+    - **After elapsed time:** the form will appear after a specified number of seconds.
+    - **On exit intent:** the form will appear when the visitor moves their cursor to the top bar of the browser window (not supported on mobile).
+    - **After scrolling:** the form will appear when the visitor has scrolled a specified % down the page.
+- **Position: c**hoose whether to display your popup in the bottom right corner or bottom left corner of your website
+- **Width:** adjust the width of the form in pixel.
+- **Height**: adjust the height of the form in pixels.
+- **Close on submit**: after a respondent submits the popup form, you can configure the number of seconds before the popup closes automatically.
+- **Transparent background:** enhance the appearance of your form by removing the default background and seamlessly integrating it into your website.
+
+## Full-Page
+---
+
+<img src="/images/embed-fullpage.png" alt="Full-Page" data-zoomable preload />
+
+### Settings
+
+- **Transparent background:** enhance the appearance of your form by removing the default background and seamlessly integrating it into your website.
+
+## Embed with React
+---
+
+```js
+import { useEffect } from "react"
+
+function App() {
+  function loadScript() {
+    const script = document.createElement('script')
+
+    script.src = 'https://www.unpkg.com/@heyform-inc/embed@latest/dist/index.umd.js'
+    document.body.appendChild(script)
+  }
+
+  function handleOpenModal() {
+    window.HeyForm.openModal('dCN9pF7UModal')
+  }
+
+  useEffect(() => {
+    loadScript()
+  }, [])
+
+  return (
+    <div>
+      <div
+        data-heyform-id="dCN9pF7U"
+        data-heyform-type="modal"
+        data-heyform-custom-url="https://heyform.net/f/dCN9pF7U"
+        data-heyform-size="large"
+        data-heyform-open-trigger="click"
+        data-heyform-open-delay="5"
+        data-heyform-open-scroll-percent="30"
+        data-heyform-trigger-background="#1d4ed8"
+        data-heyform-trigger-text="Open Form"
+        data-heyform-hide-after-submit="false"
+        data-heyform-auto-close="5"
+      >
+        <button className="heyform__trigger-button" type="button" onClick={handleOpenModal}>
+            Open Form
+        </button>
+      </div>
+    </div>
+  )
+}
+```

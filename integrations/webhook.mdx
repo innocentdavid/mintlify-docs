@@ -1,0 +1,451 @@
+---
+title: Webhook
+description: Integrate your HeyForm with Webhook
+icon: 'webhook'
+---
+
+## How it works
+
+Webhooks are a way to receive notifications when a **new form submission occurs**. With HeyForm, whenever someone submits a form, the response data is sent to your specified URL in **JSON** format through a **POST** request.
+
+## Add a webhook
+
+Publish your form and go to the **Integrations** page. Click Connect to **Webhook**.
+
+You’ll be prompted to configure your webhook endpoint.
+
+<img
+  src="/images/integration/webhook.png"
+  alt="Connect Webhook"
+  data-zoomable
+/>
+
+## Endpoint URL
+
+For the endpoint URL, set up an HTTP or HTTPS endpoint that can accept webhook requests with a POST method:
+
+- Handles POST requests with a JSON payload
+- Returns a successful status code (2XX) within 10 seconds
+
+## Example webhook event
+
+```JSON
+{
+  "id": "6686094814708f80406ffb48",
+  "formId": "TEjgpIyO",
+  "formName": "Math Quiz",
+  "fields": [
+    {
+      "title": [
+        "What's your name?"
+      ],
+      "description": [],
+      "kind": "short_text",
+      "validations": {
+        "required": true
+      },
+      "properties": null,
+      "id": "4dnr1a9A92x4",
+      "layout": {}
+    },
+    {
+      "title": [
+        "Hi ",
+        [
+          "mention",
+          [
+            "@What's your name?"
+          ],
+          {
+            "id": "4dnr1a9A92x4"
+          }
+        ],
+        ". Are you ready to work on probability, algebra, and mathematics today?&nbsp;"
+      ],
+      "description": [],
+      "kind": "statement",
+      "validations": {},
+      "properties": {
+        "buttonText": "I'm ready!"
+      },
+      "id": "ehinHKMEaJlE",
+      "layout": null
+    },
+    {
+      "title": [
+        "If you have two cats and they both have nine kittens, how many kittens do you have?"
+      ],
+      "description": [],
+      "kind": "multiple_choice",
+      "validations": {
+        "required": false
+      },
+      "properties": {
+        "allowMultiple": false,
+        "choices": [
+          {
+            "id": "Mrr20zyqsuxw",
+            "label": "16"
+          },
+          {
+            "id": "sH8Zehe47CdV",
+            "label": "17"
+          },
+          {
+            "id": "grZtX7g1tIlz",
+            "label": "18"
+          },
+          {
+            "id": "GRSWmRa86Fsf",
+            "label": "20"
+          }
+        ]
+      },
+      "id": "j7a4n6Ie18il",
+      "layout": null
+    },
+    {
+      "title": [
+        "You and eight of your friends are going to the cinema. One ticket costs £5. How much for all of you?"
+      ],
+      "description": [],
+      "kind": "multiple_choice",
+      "validations": {
+        "required": false
+      },
+      "properties": {
+        "allowMultiple": false,
+        "choices": [
+          {
+            "id": "oRgF3D2j3dK0",
+            "label": "40"
+          },
+          {
+            "id": "fYDUmPhb5OLi",
+            "label": "45"
+          },
+          {
+            "id": "k1LB6AkMGdmN",
+            "label": "50"
+          },
+          {
+            "id": "f408IJ4geXPs",
+            "label": "55"
+          }
+        ]
+      },
+      "id": "8CKkn2W46WIM",
+      "layout": null
+    },
+    {
+      "title": [
+        "What's 9 x 3?"
+      ],
+      "description": [],
+      "kind": "multiple_choice",
+      "validations": {
+        "required": false
+      },
+      "properties": {
+        "allowMultiple": false,
+        "choices": [
+          {
+            "id": "IXaDuXmqxSh7",
+            "label": "25"
+          },
+          {
+            "id": "Oz7GRKkR3Pld",
+            "label": "27"
+          },
+          {
+            "id": "xbX3gV2H7rvM",
+            "label": "29"
+          },
+          {
+            "id": "LgNGWgCb8HLf",
+            "label": "32"
+          }
+        ]
+      },
+      "id": "hY31nToTFAOm",
+      "layout": null
+    },
+    {
+      "title": [
+        "What's 9 x 0?"
+      ],
+      "description": [],
+      "kind": "multiple_choice",
+      "validations": {
+        "required": false
+      },
+      "properties": {
+        "allowMultiple": false,
+        "choices": [
+          {
+            "id": "IXaDuXmqxSh7",
+            "label": "9"
+          },
+          {
+            "id": "Oz7GRKkR3Pld",
+            "label": "1"
+          },
+          {
+            "id": "xbX3gV2H7rvM",
+            "label": "0"
+          },
+          {
+            "id": "LgNGWgCb8HLf",
+            "label": "90"
+          }
+        ]
+      },
+      "id": "ScWAtX0wJMpQ",
+      "layout": null
+    },
+    {
+      "title": [
+        "If you have nine bags of oranges and each bag has nine oranges, how many oranges do you have?"
+      ],
+      "description": [],
+      "kind": "multiple_choice",
+      "validations": {
+        "required": false
+      },
+      "properties": {
+        "allowMultiple": false,
+        "choices": [
+          {
+            "id": "eAfG1aZxgGzx",
+            "label": "81"
+          },
+          {
+            "id": "zHFOEO28xlOo",
+            "label": "90"
+          },
+          {
+            "id": "6RebqB0QMwJW",
+            "label": "99"
+          },
+          {
+            "id": "zHirgOaRmGLL",
+            "label": "100"
+          }
+        ]
+      },
+      "id": "1cYGdYysk9yp",
+      "layout": null
+    },
+    {
+      "title": [
+        [
+          "mention",
+          [
+            "@What's your name?"
+          ],
+          {
+            "id": "4dnr1a9A92x4"
+          }
+        ],
+        "&nbsp;Your score is ",
+        [
+          "variable",
+          [
+            "@Score"
+          ],
+          {
+            "id": "KLq8ujMXj9Dz"
+          }
+        ],
+        "."
+      ],
+      "description": [
+        "Thanks for completing this math quiz."
+      ],
+      "kind": "thank_you",
+      "validations": null,
+      "properties": null,
+      "id": "JeQEWqAQYjlL",
+      "layout": null
+    }
+  ],
+  "answers": [
+    {
+      "id": "4dnr1a9A92x4",
+      "title": "What's your name?",
+      "kind": "short_text",
+      "value": "Tina Ryan"
+    },
+    {
+      "id": "j7a4n6Ie18il",
+      "title": "If you have two cats and they both have nine kittens, how many kittens do you have?",
+      "kind": "multiple_choice",
+      "properties": {
+        "allowMultiple": false,
+        "choices": [
+          {
+            "id": "Mrr20zyqsuxw",
+            "label": "16"
+          },
+          {
+            "id": "sH8Zehe47CdV",
+            "label": "17"
+          },
+          {
+            "id": "grZtX7g1tIlz",
+            "label": "18"
+          },
+          {
+            "id": "GRSWmRa86Fsf",
+            "label": "20"
+          }
+        ]
+      },
+      "value": {
+        "value": [
+          "sH8Zehe47CdV"
+        ]
+      }
+    },
+    {
+      "id": "8CKkn2W46WIM",
+      "title": "You and eight of your friends are going to the cinema. One ticket costs £5. How much for all of you?",
+      "kind": "multiple_choice",
+      "properties": {
+        "allowMultiple": false,
+        "choices": [
+          {
+            "id": "oRgF3D2j3dK0",
+            "label": "40"
+          },
+          {
+            "id": "fYDUmPhb5OLi",
+            "label": "45"
+          },
+          {
+            "id": "k1LB6AkMGdmN",
+            "label": "50"
+          },
+          {
+            "id": "f408IJ4geXPs",
+            "label": "55"
+          }
+        ]
+      },
+      "value": {
+        "value": [
+          "fYDUmPhb5OLi"
+        ]
+      }
+    },
+    {
+      "id": "hY31nToTFAOm",
+      "title": "What's 9 x 3?",
+      "kind": "multiple_choice",
+      "properties": {
+        "allowMultiple": false,
+        "choices": [
+          {
+            "id": "IXaDuXmqxSh7",
+            "label": "25"
+          },
+          {
+            "id": "Oz7GRKkR3Pld",
+            "label": "27"
+          },
+          {
+            "id": "xbX3gV2H7rvM",
+            "label": "29"
+          },
+          {
+            "id": "LgNGWgCb8HLf",
+            "label": "32"
+          }
+        ]
+      },
+      "value": {
+        "value": [
+          "Oz7GRKkR3Pld"
+        ]
+      }
+    },
+    {
+      "id": "ScWAtX0wJMpQ",
+      "title": "What's 9 x 0?",
+      "kind": "multiple_choice",
+      "properties": {
+        "allowMultiple": false,
+        "choices": [
+          {
+            "id": "IXaDuXmqxSh7",
+            "label": "9"
+          },
+          {
+            "id": "Oz7GRKkR3Pld",
+            "label": "1"
+          },
+          {
+            "id": "xbX3gV2H7rvM",
+            "label": "0"
+          },
+          {
+            "id": "LgNGWgCb8HLf",
+            "label": "90"
+          }
+        ]
+      },
+      "value": {
+        "value": [
+          "xbX3gV2H7rvM"
+        ]
+      }
+    },
+    {
+      "id": "1cYGdYysk9yp",
+      "title": "If you have nine bags of oranges and each bag has nine oranges, how many oranges do you have?",
+      "kind": "multiple_choice",
+      "properties": {
+        "allowMultiple": false,
+        "choices": [
+          {
+            "id": "eAfG1aZxgGzx",
+            "label": "81"
+          },
+          {
+            "id": "zHFOEO28xlOo",
+            "label": "90"
+          },
+          {
+            "id": "6RebqB0QMwJW",
+            "label": "99"
+          },
+          {
+            "id": "zHirgOaRmGLL",
+            "label": "100"
+          }
+        ]
+      },
+      "value": {
+        "value": [
+          "6RebqB0QMwJW"
+        ]
+      }
+    }
+  ],
+  "hiddenFields": [
+    {
+      "id": "0SOJ1I1GPq0b",
+      "name": "ref",
+      "value": "Arc"
+    }
+  ],
+  "variables": [
+    {
+      "id": "KLq8ujMXj9Dz",
+      "name": "Score",
+      "kind": "number",
+      "value": 40
+    }
+  ]
+}
+```
